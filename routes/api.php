@@ -16,17 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::resource('Planes', PlanesController::class);
+//Route::resource('planes', planesController::class);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/Planes', [PlanesController::class, 'index']);
-Route::get('/Planes/{id}', [PlanesController::class, 'show']);
+Route::get('/planes', [planesController::class, 'index']);
+Route::get('/planes/{id}', [planesController::class, 'show']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::post('/Planes', [PlanesController::class, 'store']);
-    Route::put('/Planes/{id}', [PlanesController::class, 'update']);
-    Route::delete('/Planes/{id}', [PlanesController::class, 'destroy']);
+    Route::post('/planes', [planesController::class, 'store']);
+    Route::put('/planes/{id}', [planesController::class, 'update']);
+    Route::delete('/planes/{id}', [planesController::class, 'destroy']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
