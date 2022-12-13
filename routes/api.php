@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\VolcanoesController;
+use App\Http\Controllers\PlanesController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,17 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::resource('volcanoes', VolcanoesController::class);
+//Route::resource('Planes', PlanesController::class);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/volcanoes', [VolcanoesController::class, 'index']);
-Route::get('/volcanoes/{id}', [VolcanoesController::class, 'show']);
+Route::get('/Planes', [PlanesController::class, 'index']);
+Route::get('/Planes/{id}', [PlanesController::class, 'show']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::post('/volcanoes', [VolcanoesController::class, 'store']);
-    Route::put('/volcanoes/{id}', [VolcanoesController::class, 'update']);
-    Route::delete('/volcanoes/{id}', [VolcanoesController::class, 'destroy']);
+    Route::post('/Planes', [PlanesController::class, 'store']);
+    Route::put('/Planes/{id}', [PlanesController::class, 'update']);
+    Route::delete('/Planes/{id}', [PlanesController::class, 'destroy']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Volcanoes;
+use App\Models\Planes;
 use Illuminate\Http\Request;
 
-class VolcanoesController extends Controller
+class PlanesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class VolcanoesController extends Controller
      */
     public function index()
     {
-        return Volcanoes::all();
+        return Planes::paginate(20);
     }
 
     /**
@@ -27,10 +27,11 @@ class VolcanoesController extends Controller
         $request -> validate([
             'name' => 'required',
             'slug' => 'required',
+            'description' => 'required',
             'place' => 'required'
         ]);
 
-        return Volcanoes::create($request->all());
+        return Planes::create($request->all());
     }
 
     /**
@@ -41,7 +42,7 @@ class VolcanoesController extends Controller
      */
     public function show($id)
     {
-        return Volcanoes::find($id);
+        return Planes::find($id);
     }
 
     /**
@@ -53,9 +54,9 @@ class VolcanoesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $volcanoes = Volcanoes::find($id);
-        $volcanoes -> update($request->all());
-        return $volcanoes;
+        $Planes = Planes::find($id);
+        $Planes -> update($request->all());
+        return $Planes;
     }
 
     /**
@@ -66,6 +67,6 @@ class VolcanoesController extends Controller
      */
     public function destroy($id)
     {
-        return Volcanoes::destroy($id);
+        return Planes::destroy($id);
     }
 }
