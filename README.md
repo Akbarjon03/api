@@ -16,8 +16,6 @@
 ## Demo 🏁
 
 - Postman link: https://documenter.getpostman.com/view/24661639/2s8YzTV3Jq
-- Project link: https://315b-13-56-248-193.ngrok.io/
-
 
 ## Run Locally 🖥
 
